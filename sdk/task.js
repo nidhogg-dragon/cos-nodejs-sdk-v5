@@ -53,6 +53,7 @@ var initTask = function (cos) {
                  i < nextUploadIndex; // 小于当前操作的 index 才处理
                  i++) {
                 if (!queue[i] || queue[i].state !== 'waiting') {
+                    delete tasks[queue[i].id]
                     queue.splice(i, 1);
                     nextUploadIndex--;
                 }
